@@ -26,7 +26,7 @@ while z < len(compound_formula):
                                 break
 # If there is no number after both letters, we set num to 0
                 else:
-                    num = '0'
+                    num = '1'
                 chem_d[compound_formula[z]+compound_formula[z+1]] = num
 # Same as above, but for a single-letter element abbr.
             else:
@@ -38,11 +38,11 @@ while z < len(compound_formula):
                         else:
                             break
                 else: 
-                    num = '0'
+                    num = '1'
                 chem_d[compound_formula[z]] = num
 # If a single letter ends the compound, record it with 0 
         else:
-            chem_d[compound_formula[z]] = '0'
+            chem_d[compound_formula[z]] = '1'
     z += 1
     print(z)
 
