@@ -1,4 +1,3 @@
-
 # ListComp will create a list in this case, by going through a dictionary and taking the keys
 def create_list(some_list):
     return [element['name'] for element in some_list]
