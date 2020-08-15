@@ -59,21 +59,10 @@ class Linked_List():
 
 # function to make a deep copy of a LL with .random by taking and returning only the head node
 # Assume Nodes have extra attribute called .random, which points to a random node in the LL
-class randoNode(Node):
+class randoNode():
     def __init__(self, value):
-        Node.__init__(self, value)
         self.random = None
-
-class RandoLL(Linked_List):
-    def random_node(self):
-        import random
-        end = self.count_nodes()
-        counter = random.randint(0, end)
-        pointer = self.head
-        while counter != 0:
-            pointer = pointer.next
-            counter -= 1
-        return pointer
+        self.next = None
 
 def deep_copy_RandoLL(headnode):
     new_head = randoNode(headnode.value)
@@ -85,8 +74,14 @@ def deep_copy_RandoLL(headnode):
         pointer2 = pointer2.next
     pointer1 = headnode
     pointer2 = new_head
+    pointer2_goal = headnode
     while pointer1 != None:
-        pointer2.random = pointer1.random
+        pointer1_goal = headnode
+        pointer2_goal = headnode
+        while pointer1_goal != pointer1.random
+            pointer1_goal = pointer1_goal.next
+            pointer2_goal = pointer2_goal.next
+        pointer2.random = pointer2_goal
         pointer1 = pointer1.next
         pointer2 = pointer2.next
     return new_head

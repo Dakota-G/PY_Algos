@@ -13,10 +13,10 @@ def merge_sort(arr):
         m = 0
         while l < len(left) and r < len(right):
             if left[l] < right[r]:
-              # The value from the left half has been used
-              arr[m] = left[l]
-              # Move the iterator forward
-              l += 1
+                # The value from the left half has been used
+                arr[m] = left[l]
+                # Move the iterator forward
+                l += 1
             else:
                 arr[m] = right[r]
                 r += 1

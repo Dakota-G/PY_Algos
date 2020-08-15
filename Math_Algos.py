@@ -65,3 +65,30 @@ def pythagorean():
         print("You must input a letter of 'a', 'b', or 'c'.")
         return pythagorean()
 
+def findPrimes(limit):
+    # creates list called primes where every entry is True
+    primes = [True] * limit
+    # go through the list and yield any index that is True
+    for i in range(2, limit):
+        if primes[i]:
+            yield i
+            # change to False any multiple of the number(cannot be Prime)
+            for n in range(i*i, limit, i):
+                primes[n] = False
+
+def findPrimesTwo(limit):
+    primes = []
+    not_primes = []
+    i = 2
+    while len(primes) <= limit:
+        if i not in not_primes:
+            primes.append(i)
+            n = i
+            for _ in range(limit*2):
+                n = n + i
+                if n not in not_primes:
+                    not_primes.append(n)
+        i += 1
+    return not_primes
+
+print(findPrimesTwo(100))

@@ -10,6 +10,9 @@ def OrgShedulesOptimized(arr):
         for other_element in arr:
             if element[0] < other_element[0] and element[1] == other_element[1]:
                 share_dict["{} & {}".format(element[0], other_element[0])].append(element[1])
+    for students in share_dict:
+        print(students)
+        print(share_dict[students])
     return(share_dict)
 
 students = [
@@ -27,4 +30,4 @@ students = [
     ["5", "Art"]
 ]
 
-print(OrgShedulesOptimized(students))
+OrgShedulesOptimized(students)

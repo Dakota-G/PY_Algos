@@ -9,3 +9,5 @@ def make_readable(seconds):
     mm = ("{:02d}".format(int(mm%60)))
     ss = ("{:02d}".format(int(ss)))
     return(f"{hh}:{mm}:{ss}")
+
+print(make_readable(124))
